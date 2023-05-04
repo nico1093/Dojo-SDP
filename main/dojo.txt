@@ -1,0 +1,41 @@
+// C++ code
+//
+int ledRojo = 13;
+int ledAmarillo = 8;
+int ledVerde = 1;
+int buzzerPin = 9;
+
+void setup()
+{
+  pinMode(ledRojo, OUTPUT);
+  pinMode(ledAmarillo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop()
+{
+ 	prenderLuzDeSemaforo(ledRojo, 5);
+    prenderLuzDeSemaforo(ledAmarillo, 2);
+    prenderLuzDeSemaforo(ledVerde, 5);
+    prenderLuzDeSemaforo(ledAmarillo, 2);
+}
+
+
+void prenderLuzDeSemaforo(int ledColor, int segundos){
+  	digitalWrite(ledColor, HIGH);
+  	prenderPorCeguez(ledColor, 0.5);
+    delay(segundos*1000);
+    digitalWrite(ledColor, LOW);
+  	apagarPorCeguez();
+}
+
+void prenderPorCeguez(int ledColor, int segundos){
+  if(ledColor == ledRojo){
+    tone(buzzerPin, 440, segundos*1000);
+  }
+}
+
+void apagarPorCeguez(){
+  noTone(buzzerPin);
+}
