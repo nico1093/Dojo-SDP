@@ -3,7 +3,7 @@
 
 # Integrantes
 * Martin, Nicolas Gustavo
-* La Bella, Nicolas
+* De Bella, Nicolas
 * Cesedes, Dylan
 * Duarte, Heber
 
